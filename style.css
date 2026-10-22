@@ -1,0 +1,383 @@
+
+/* ==================================
+   1. General Page Design
+================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f7f9;
+    color: #17212f;
+    line-height: 1.5;
+}
+
+.dashboard {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px 36px 60px;
+}
+
+
+/* ==================================
+   2. Page Header
+================================== */
+
+.page-header {
+    text-align: center;
+    padding: 10px 0 42px;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin: 0 0 8px;
+    color: #17212f;
+}
+
+.page-header p {
+    font-size: 17px;
+    color: #718096;
+    margin: 0;
+}
+
+
+/* ==================================
+   3. Statistics Cards
+================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e9f0;
+    border-radius: 10px;
+    padding: 24px;
+    min-height: 140px;
+}
+
+.stat-card p {
+    font-size: 14px;
+    color: #718096;
+    margin: 0 0 10px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: #17212f;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.stat-card span {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    color: #718096;
+    margin-top: 8px;
+}
+
+
+/* ==================================
+   4. Main Content Cards
+================================== */
+
+.content-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e9f0;
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0 0 5px;
+    color: #17212f;
+}
+
+.section-heading p {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+}
+
+
+/* ==================================
+   5. Chart Section
+================================== */
+
+.chart-section {
+    padding-bottom: 30px;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 470px;
+    margin-top: 28px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* ==================================
+   6. Dataset Header
+================================== */
+
+.dataset-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.table-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.table-controls input,
+.table-controls select {
+    height: 42px;
+    background-color: #ffffff;
+    border: 1px solid #dce2ea;
+    border-radius: 7px;
+    padding: 0 14px;
+    font-size: 13px;
+    color: #273447;
+    outline: none;
+    font-family: inherit;
+}
+
+.table-controls input {
+    width: 200px;
+}
+
+.table-controls select {
+    cursor: pointer;
+}
+
+.table-controls input:focus,
+.table-controls select:focus {
+    border-color: #7297c3;
+}
+
+.table-controls input::placeholder {
+    color: #9aa6b5;
+}
+
+
+/* ==================================
+   7. Data Table
+================================== */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e8ecf1;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f1f3f6;
+}
+
+th {
+    padding: 14px 16px;
+    color: #354155;
+    font-weight: 600;
+    white-space: nowrap;
+    border-bottom: 1px solid #e4e8ee;
+}
+
+td {
+    padding: 13px 16px;
+    color: #445166;
+    border-bottom: 1px solid #edf0f4;
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fb;
+}
+
+tbody tr:hover {
+    background-color: #eef4fb;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ==================================
+   8. Table Footer and Pagination
+================================== */
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    gap: 20px;
+}
+
+.table-footer p {
+    font-size: 13px;
+    color: #718096;
+    margin: 0;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination button {
+    background-color: #ffffff;
+    border: 1px solid #dce2ea;
+    border-radius: 6px;
+    padding: 9px 15px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #34445c;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #edf3fa;
+    border-color: #9bb4d2;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#pageInfo {
+    font-size: 13px;
+    font-weight: 600;
+    color: #43536b;
+    min-width: 55px;
+    text-align: center;
+}
+
+
+/* ==================================
+   9. Responsive Design
+================================== */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dataset-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .table-controls {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .dashboard {
+        padding: 24px 14px 40px;
+    }
+
+    .page-header {
+        padding-bottom: 30px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+        letter-spacing: -0.8px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 16px;
+        min-height: 120px;
+    }
+
+    .stat-card h2 {
+        font-size: 23px;
+    }
+
+    .content-card {
+        padding: 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 19px;
+    }
+
+    .chart-container {
+        height: 420px;
+    }
+
+    .table-controls input {
+        width: 100%;
+    }
+
+    .table-controls select {
+        flex: 1;
+        min-width: 130px;
+    }
+
+    .table-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pagination {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+}

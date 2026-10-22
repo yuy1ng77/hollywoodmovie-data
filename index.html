@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hollywood's Most Profitable Stories</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Papa Parse -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <h1>Hollywood's Most Profitable Stories</h1>
+            <p>Exploring Hollywood movie data</p>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Total Movies</p>
+                <h2 id="totalMovies">--</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Highest Profitability</p>
+                <h2 id="highestProfit">--</h2>
+                <span id="highestMovie"></span>
+            </div>
+
+            <div class="stat-card">
+                <p>Average Profitability</p>
+                <h2 id="averageProfit">--</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Most Common Genre</p>
+                <h2 id="commonGenre">--</h2>
+            </div>
+
+        </section>
+
+        <!-- Chart Section -->
+        <section class="content-card chart-section">
+
+            <div class="section-heading">
+                <h2>Top 10 Hollywood Movies by Profitability</h2>
+                <p>
+                    The 10 most profitable movies in the dataset,
+                    ranked by profitability.
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="profitChart"></canvas>
+            </div>
+
+        </section>
+
+        <!-- Dataset Section -->
+        <section class="content-card data-section">
+
+            <div class="dataset-header">
+
+                <div class="section-heading">
+                    <h2>Explore the Full Dataset</h2>
+                    <p>
+                        Search for movies or filter by genre
+                        to explore the data.
+                    </p>
+                </div>
+
+                <div class="table-controls">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search for a movie..."
+                        aria-label="Search movies"
+                    >
+
+                    <select id="genreFilter" aria-label="Filter by genre">
+                        <option value="all">All Genres</option>
+                    </select>
+
+                    <select id="sortSelect" aria-label="Sort movies">
+                        <option value="profitDesc">
+                            Profitability (High to Low)
+                        </option>
+                        <option value="profitAsc">
+                            Profitability (Low to High)
+                        </option>
+                        <option value="yearDesc">
+                            Year (Newest First)
+                        </option>
+                        <option value="yearAsc">
+                            Year (Oldest First)
+                        </option>
+                        <option value="filmAsc">
+                            Film (A to Z)
+                        </option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Data Table -->
+            <div class="table-container">
+
+                <table id="movieTable">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="table-footer">
+
+                <p id="tableInfo">
+                    Loading movies...
+                </p>
+
+                <div class="pagination">
+                    <button id="prevPage" type="button">
+                        Previous
+                    </button>
+
+                    <span id="pageInfo">1 / 1</span>
+
+                    <button id="nextPage" type="button">
+                        Next
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
